@@ -78,3 +78,5 @@ gem "html2slim"
 gem 'dotenv-rails'
 gem 'jquery-rails'
 
+gem 'serviceworker-rails'
+gem 'web-push'
