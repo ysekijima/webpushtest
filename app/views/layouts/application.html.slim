@@ -11,5 +11,6 @@ html
     link[rel="manifest" href="/manifest.json"]
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_tag do
-      = raw "window.vapidPublicKey = new Uint8Array(#{vapid_public_key});\n"  body
+      = raw "window.vapidPublicKey = new Uint8Array(#{vapid_public_key});\n"
+body
     = yield
