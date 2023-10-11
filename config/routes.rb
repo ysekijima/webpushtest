@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'devices/create'
   # get 'devices/create'
   get 'home/index'
   post 'home/post1'
@@ -21,5 +22,6 @@ Rails.application.routes.draw do
     get "logout", :to => "users/sessions#destroy"
   end
 
-  # resources :devices, only: [:create]
+  resources :devices, only: [:create]
+
 end
