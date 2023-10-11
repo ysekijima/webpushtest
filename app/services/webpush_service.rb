@@ -9,9 +9,9 @@ class WebpushService
     end
   end
 
-  def webpush(device, message)
-    Webpush.payload_send(
-      message: message,
+  def webpush(device, msg)
+    response = WebPush.payload_send(
+      message: msg,
       endpoint: device.endpoint,
       p256dh: device.p256dh,
       auth: device.auth,
@@ -21,6 +21,7 @@ class WebpushService
         private_key: ENV['VAPID_PRIVATE_KEY']
       }
     )
+    Rails.logger.debug response.inspect
   end
 
   private

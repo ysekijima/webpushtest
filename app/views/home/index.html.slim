@@ -1,8 +1,23 @@
 h1 Home#index
-p Find me in app/views/home/index.html.slim
 
+h2 ログイン情報
 dl
-  dd user.id
-  dt = current_user.id
-  dd user.email
-  dt = current_user.email
+  dt user.id
+  dd = current_user.id
+  dt user.email
+  dd = current_user.email
+
+hr
+=link_to 'logout', 'logout'
+br
+= button_tag '許可してるかチェック', onclick: 'checkNoticyMe();'
+br
+= button_to 'WebPush通知してみる[post1]', 'home/post1', {method: :post, remote: true}
+br
+= button_to 'WebPush通知してみる[post2]', 'home/post2', {method: :post}
+
+javascript:
+  function checkNoticyMe() {
+    alert('notify: '+Notification.permission);
+  }
+
